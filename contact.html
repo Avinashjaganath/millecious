@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items</title>
+</head>
+<body>
+    <link rel="stylesheet" href="./style/index.css">
+    <section class=" top-txt ">
+        <div class="head container ">
+            <div class="head-txt ">
+                <p>Order Ours High Quality Products.</p>
+            </div>
+            
+        </div>
+    </section>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <input type="checkbox" name="" id="checkbox">
+            
+            <ul class="menu-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="items.html">items</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+            <div class="logo">
+                <img class="logo" src="asset/logo.jpg" alt="logo">
+            </div>
+        </div>
+    </nav>
+    <section id="contact">
+        <div class="contact container">
+        <form id="contacting">
+            <div class="form">
+                <div class="form-txt">
+                    <h1>Contact Us</h1>
+                    <p>As you might expect of a company that began as a high-end interiors contractor, we pay strict
+                        attention.</p> <br><p style="font-size: large; font-weight: bold;">Bangalore,Karnataka,India</p> <br>
+                    <p>+91 84317 16646 | +91 90198 72660 | +91 72045 17205</p><br>
+                    <p style="font-size: large; font-weight: bold;">millecious2024@gmail.com</p>
+                </div>
+                <div class="form-details">
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <textarea name="message" id="message" cols="52" rows="7" placeholder="Message" required></textarea>
+                    <button type="submit">SEND MESSAGE</button>
+                </div>
+            </div>   
+        </form>
+    </div>
+    </section>
+
+    <footer>
+        <div class="footer-container container">
+            <img class="footerlogo" src="asset/logo.jpg" alt="logo">
+            <div class="content_1">
+                <p>The customer is at the heart of our<br>unique business model, which includes<br>design.</p>
+            </div>
+        </div>
+        <div class="f-design">
+            <div class="f-design-txt container">
+                <p>Design by Avinash J</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("contacting").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form from submitting the default way
+
+        // Get input values
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        // Validate input (optional)
+        if (name === "" || email === "" || message === "") {
+            alert("Please fill out all fields.");
+            return;
+        }
+
+        // Construct the mailto link
+        const subject = encodeURIComponent("Contact Form Submission from " + name);
+        const body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\nMessage: " + message);
+        const mailtoLink = `mailto:avinashj40396701@gmail.com?subject=${subject}&body=${body}`;
+
+        // Open the default mail client
+        window.location.href = mailtoLink;
+        console.log();
+
+        // Optionally reset the form
+        document.getElementById("contacting").reset();
+    });
+    </script>
+</body>
+</html>
